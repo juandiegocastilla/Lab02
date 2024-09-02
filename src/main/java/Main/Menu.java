@@ -38,14 +38,15 @@ public class Menu {
 
         // Inicializar los botones y añadir ActionListener
         for (int i = 0; i < numop; i++) {
-            final int index = i; // Variable final para usar en el ActionListener
+            final int index = i; 
             botones[i] = new JButton(opciones[i]);
             botones[i].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    // *** AJUSTAR SEGUN LAS OPCIONES DEL MENU ***
+                  
                     switch (index) {
                         case 0:
+                            Calculo.main(new String[]{})
                            ;  break;
                         case 1:
                             ; break;
