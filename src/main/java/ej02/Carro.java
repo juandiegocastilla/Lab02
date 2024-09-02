@@ -12,30 +12,28 @@ package ej02;
  */
 public class Carro extends javax.swing.JFrame {
 
-    int modelo;
-  String marca;
-  double kilometraje;
-  String color;
+    
   
 
     public Carro() {
         initComponents();
     }
-public Carro(int modelo,
+    class carra{
+     int modelo;
+  String marca;
+  double kilometraje;
+  String color;
+  
+  public carra(int modelo,
   String marca,
   double kilometraje,
-  String color,
-  int cantidad){
+  String color){
   this.modelo=modelo;
- this.marca=marca;
+  this.marca=marca;
  this.kilometraje=kilometraje;
- this.color=color;
-}
-
+ this.color=color;}
   
-    
-    
-   void setModelo(int modelo) {
+ void setModelo(int modelo) {
         this.modelo = modelo;
     }
 
@@ -67,7 +65,13 @@ public Carro(int modelo,
     public String getColor() {
         return color;
     }
+ 
+}
 
+  
+    
+    
+   
    
     /**
      * This method is called from within the constructor to initialize the form.
@@ -91,10 +95,10 @@ public Carro(int modelo,
         Ordenamiento_btn = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        Guardar_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Jtextmarca.setText("Jtextmarca");
         Jtextmarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JtextmarcaActionPerformed(evt);
@@ -136,6 +140,13 @@ public Carro(int modelo,
             }
         });
 
+        Guardar_btn.setText("Guardar");
+        Guardar_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Guardar_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -174,6 +185,10 @@ public Carro(int modelo,
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(161, 161, 161))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(Guardar_btn)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,7 +228,9 @@ public Carro(int modelo,
                         .addGap(3, 3, 3)
                         .addComponent(Jtextkilometraje, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(Guardar_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
@@ -228,19 +245,23 @@ public Carro(int modelo,
     }//GEN-LAST:event_JtextmarcaActionPerformed
 
     private void Ordenamiento_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ordenamiento_btnActionPerformed
-     int cantidad = Integer.parseInt(Jtextcantidad.getText());
-       int[] carros = new int[cantidad];
+ if (carros != null && carros.length > 0){
+        int cantidad = Integer.parseInt(Jtextcantidad.getText());
+        ordenarPorKilometraje(carros);
+        String resultadoKilometraje = "";
+        for (int i=0; i<cantidad;i++) {
+            resultadoKilometraje += carros[i].getKilometraje() + " ";
+        }
+        jTextField1.setText(resultadoKilometraje);
 
-        for (int i = 0; i < cantidad; i++) {
-            int modelo = Integer.parseInt(Jtextmodelo.getText());
-            String marca = Jtextmarca.getText();
-            double kilometraje = Double.parseDouble(Jtextkilometraje.getText());
-            String color = Jtextcolor.getText();
-
-            Carro carros[i] = new Carro(modelo, marca, kilometraje, color);};
-
-   
-    
+        
+        ordenarPorModelo(carros);
+        String resultadoModelo = "";
+      for (int i=0; i<cantidad;i++) {
+            resultadoModelo += carros[i].getModelo() + " ";
+        }
+        jTextField2.setText(resultadoModelo);
+ }
     
     }//GEN-LAST:event_Ordenamiento_btnActionPerformed
 
@@ -251,7 +272,71 @@ public Carro(int modelo,
     private void JtextcolorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JtextcolorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JtextcolorActionPerformed
+private int indice=0;
+private carra carros[];
+    private void Guardar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Guardar_btnActionPerformed
+      int cantidad = Integer.parseInt(Jtextcantidad.getText());
+      
+      
+        carros = new carra[cantidad];
 
+        for (int i = 0; i < cantidad; i++) {
+            if (i < cantidad) {  
+            int modelo = Integer.parseInt(Jtextmodelo.getText());
+            String marca = Jtextmarca.getText();
+            double kilometraje = Double.parseDouble(Jtextkilometraje.getText());
+            String color = Jtextcolor.getText();
+
+            carros[i] = new carra(modelo, marca, kilometraje, color);
+            indice++;  
+
+            
+            Jtextmodelo.setText("");
+            Jtextmarca.setText("");
+            Jtextkilometraje.setText("");
+            Jtextcolor.setText("");
+
+            if (indice == cantidad) {
+                Guardar_btn.setEnabled(false);  
+                break;}
+
+
+}}
+       
+    }//GEN-LAST:event_Guardar_btnActionPerformed
+
+    /**
+     *
+     * @param carros
+     */
+    public void ordenarPorKilometraje(carra[] carros) {
+    int n = carros.length;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - 1 - i; j++) {
+            if (carros[j].getKilometraje() > carros[j + 1].getKilometraje()) {
+               
+                carra temp = carros[j];
+                carros[j] = carros[j + 1];
+                carros[j + 1] = temp;
+            }
+        }
+    }
+}
+
+// Ordenamiento burbuja por modelo de menor a mayor
+public void ordenarPorModelo(carra[] carros) {
+    int n = carros.length;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - 1 - i; j++) {
+            if (carros[j].getModelo() > carros[j + 1].getModelo()) {
+                // Intercambia carros[j] y carros[j + 1]
+                carra temp = carros[j];
+                carros[j] = carros[j + 1];
+                carros[j + 1] = temp;
+            }
+        }
+    }
+}
   
   
   
@@ -272,6 +357,7 @@ public Carro(int modelo,
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Guardar_btn;
     private javax.swing.JTextField Jtextcantidad;
     private javax.swing.JTextField Jtextcolor;
     private javax.swing.JTextField Jtextkilometraje;

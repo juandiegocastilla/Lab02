@@ -1,2 +1,2 @@
 # Lab-Plantilla
-EQUIPO CON ANGEL DAVID VELASCO HERNANDEZ
+Plantilla para entrega de laboratorios curso de Programación de Computación III
