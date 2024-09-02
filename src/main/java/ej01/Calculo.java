@@ -17,7 +17,7 @@ public class Calculo {
         //primer programa 
 
         Scanner scanner = new Scanner(System.in);
-        Scanner scanner2 = new Scanner(System.in);
+        
         Random random = new Random();
         Calculos calculos = new Calculos();
         
