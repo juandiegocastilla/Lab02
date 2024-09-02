@@ -27,25 +27,31 @@ public Carro(int modelo,
   String color,
   int cantidad){
   this.modelo=modelo;
-this.marca=marca;
-this.kilometraje=kilometraje;
-this.color=color;
+ this.marca=marca;
+ this.kilometraje=kilometraje;
+ this.color=color;
 }
 
-  void setmodelo(int modelo){
-   this.modelo=Integer.parseInt(Jtextmodelo.getText());}
-   
-   void setmarca(String marca){
-   this.marca=marca;};
-   
-    void setkilometraje(double kilometraje){
-   this.kilometraje=Integer.parseInt(Jtextkilometraje.getText());};
+  
     
     
-    
-    void setcolor(int cantidad){
-   this.color=color;};
-    
+   void setModelo(int modelo) {
+        this.modelo = modelo;
+    }
+
+    void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    void setKilometraje(double kilometraje) {
+        this.kilometraje = kilometraje;
+    }
+
+    void setColor(String color) {
+        this.color = color;
+    }
+
+    // Métodos getters
     public int getModelo() {
         return modelo;
     }
@@ -53,6 +59,15 @@ this.color=color;
     public double getKilometraje() {
         return kilometraje;
     }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
    
     /**
      * This method is called from within the constructor to initialize the form.
@@ -79,24 +94,30 @@ this.color=color;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        Jtextmarca.setText("Jtextmarca");
         Jtextmarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JtextmarcaActionPerformed(evt);
             }
         });
 
-        Jtextmodelo.setText("jTextField2");
+        Jtextmodelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JtextmodeloActionPerformed(evt);
+            }
+        });
 
-        Jtextcolor.setText("jTextField3");
+        Jtextcolor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JtextcolorActionPerformed(evt);
+            }
+        });
 
-        Jtextcantidad.setText("jTextField4");
         Jtextcantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JtextcantidadActionPerformed(evt);
             }
         });
-
-        Jtextkilometraje.setText("jTextField5");
 
         jLabel1.setText("Ingrese la cantidad de autos");
 
@@ -108,16 +129,12 @@ this.color=color;
 
         jLabel5.setText("Ingrese el kilometraje del auto");
 
-        Ordenamiento_btn.setText("jButton2");
+        Ordenamiento_btn.setText("Ordenamiento Burbuja");
         Ordenamiento_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Ordenamiento_btnActionPerformed(evt);
             }
         });
-
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,35 +144,36 @@ this.color=color;
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Jtextmarca, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(Jtextcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(190, 190, 190))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Jtextmodelo, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Ordenamiento_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(221, 221, 221))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Jtextcolor, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Jtextmodelo, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Ordenamiento_btn))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Jtextmarca, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(Jtextcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(190, 190, 190))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5)
                                     .addComponent(Jtextkilometraje, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(149, 149, 149))))
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Jtextcolor, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(161, 161, 161))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,19 +199,20 @@ this.color=color;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4))
                     .addComponent(Ordenamiento_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Jtextcolor, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(Jtextcolor, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(3, 3, 3)
                         .addComponent(Jtextkilometraje, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(114, Short.MAX_VALUE))
         );
 
@@ -210,14 +229,28 @@ this.color=color;
 
     private void Ordenamiento_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ordenamiento_btnActionPerformed
      int cantidad = Integer.parseInt(Jtextcantidad.getText());
-     int [] carros= new int[cantidad];
-     
+       int[] carros = new int[cantidad];
 
-    for (int i = 0; i < cantidad; i++) {
-       
-        
-    };
+        for (int i = 0; i < cantidad; i++) {
+            int modelo = Integer.parseInt(Jtextmodelo.getText());
+            String marca = Jtextmarca.getText();
+            double kilometraje = Double.parseDouble(Jtextkilometraje.getText());
+            String color = Jtextcolor.getText();
+
+            Carro carros[i] = new Carro(modelo, marca, kilometraje, color);};
+
+   
+    
+    
     }//GEN-LAST:event_Ordenamiento_btnActionPerformed
+
+    private void JtextmodeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JtextmodeloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JtextmodeloActionPerformed
+
+    private void JtextcolorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JtextcolorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JtextcolorActionPerformed
 
   
   
