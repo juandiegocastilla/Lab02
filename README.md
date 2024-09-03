@@ -1,2 +1,2 @@
 # Lab-Plantilla
-Plantilla para entrega de laboratorios curso de Programación de Computación III
+Equipo con ANGEL DAVID VELAZCO HERNANDEZ
