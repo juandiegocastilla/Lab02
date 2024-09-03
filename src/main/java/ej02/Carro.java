@@ -96,6 +96,9 @@ public class Carro extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         Guardar_btn = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -127,7 +130,7 @@ public class Carro extends javax.swing.JFrame {
 
         jLabel2.setText("Ingrese la marca del auto");
 
-        jLabel3.setText("Ingrese el modelo del auto");
+        jLabel3.setText("Ingrese el modelo del auto (año modelo)");
 
         jLabel4.setText("Ingrese el color del auto");
 
@@ -146,6 +149,12 @@ public class Carro extends javax.swing.JFrame {
                 Guardar_btnActionPerformed(evt);
             }
         });
+
+        jLabel6.setText("Modelos");
+
+        jLabel7.setText("Kilometraje");
+
+        jLabel8.setText("Km");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -167,28 +176,35 @@ public class Carro extends javax.swing.JFrame {
                                     .addComponent(Jtextmarca, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addComponent(Jtextcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(190, 190, 190))
+                        .addGap(69, 69, 69)
+                        .addComponent(Guardar_btn)
+                        .addGap(49, 49, 49))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(Jtextkilometraje, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel7))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Jtextkilometraje, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel8)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(18, 18, 18)
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Jtextcolor, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(161, 161, 161))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(Guardar_btn)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,7 +216,9 @@ public class Carro extends javax.swing.JFrame {
                                 .addGap(25, 25, 25)
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Jtextcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Jtextcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Guardar_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(13, 13, 13))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
@@ -220,17 +238,21 @@ public class Carro extends javax.swing.JFrame {
                         .addComponent(Jtextcolor, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(3, 3, 3)
-                        .addComponent(Jtextkilometraje, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addComponent(Guardar_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Jtextkilometraje, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -243,26 +265,27 @@ public class Carro extends javax.swing.JFrame {
     private void JtextmarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JtextmarcaActionPerformed
        
     }//GEN-LAST:event_JtextmarcaActionPerformed
-
+private int indice=0;
+private carra carros[];
     private void Ordenamiento_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ordenamiento_btnActionPerformed
- if (carros != null && carros.length > 0){
+ 
         int cantidad = Integer.parseInt(Jtextcantidad.getText());
-        ordenarPorKilometraje(carros);
-        String resultadoKilometraje = "";
+        Kilometraje(carros);
+        String resulKilometraje = "";
         for (int i=0; i<cantidad;i++) {
-            resultadoKilometraje += carros[i].getKilometraje() + " ";
+            resulKilometraje += carros[i].getKilometraje() + "--";
         }
-        jTextField1.setText(resultadoKilometraje);
+        jTextField1.setText(resulKilometraje);
 
         
-        ordenarPorModelo(carros);
-        String resultadoModelo = "";
+        Modelo(carros);
+        String resulModelo = "";
       for (int i=0; i<cantidad;i++) {
-            resultadoModelo += carros[i].getModelo() + " ";
+            resulModelo += carros[i].getModelo() + "--";
         }
-        jTextField2.setText(resultadoModelo);
- }
-    
+        jTextField2.setText(resulModelo);
+ 
+       
     }//GEN-LAST:event_Ordenamiento_btnActionPerformed
 
     private void JtextmodeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JtextmodeloActionPerformed
@@ -272,22 +295,23 @@ public class Carro extends javax.swing.JFrame {
     private void JtextcolorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JtextcolorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JtextcolorActionPerformed
-private int indice=0;
-private carra carros[];
+
     private void Guardar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Guardar_btnActionPerformed
       int cantidad = Integer.parseInt(Jtextcantidad.getText());
       
-      
+       if (carros == null) { 
         carros = new carra[cantidad];
+    }
+      
 
-        for (int i = 0; i < cantidad; i++) {
-            if (i < cantidad) {  
+        
+            if (indice < cantidad) {  
             int modelo = Integer.parseInt(Jtextmodelo.getText());
             String marca = Jtextmarca.getText();
             double kilometraje = Double.parseDouble(Jtextkilometraje.getText());
             String color = Jtextcolor.getText();
 
-            carros[i] = new carra(modelo, marca, kilometraje, color);
+            carros[indice] = new carra(modelo, marca, kilometraje, color);
             indice++;  
 
             
@@ -298,10 +322,10 @@ private carra carros[];
 
             if (indice == cantidad) {
                 Guardar_btn.setEnabled(false);  
-                break;}
+               }
 
 
-}}
+}
        
     }//GEN-LAST:event_Guardar_btnActionPerformed
 
@@ -309,7 +333,7 @@ private carra carros[];
      *
      * @param carros
      */
-    public void ordenarPorKilometraje(carra[] carros) {
+    public void Kilometraje(carra[] carros) {
     int n = carros.length;
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - 1 - i; j++) {
@@ -324,12 +348,12 @@ private carra carros[];
 }
 
 // Ordenamiento burbuja por modelo de menor a mayor
-public void ordenarPorModelo(carra[] carros) {
+public void Modelo(carra[] carros) {
     int n = carros.length;
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - 1 - i; j++) {
             if (carros[j].getModelo() > carros[j + 1].getModelo()) {
-                // Intercambia carros[j] y carros[j + 1]
+                
                 carra temp = carros[j];
                 carros[j] = carros[j + 1];
                 carros[j + 1] = temp;
@@ -369,6 +393,9 @@ public void ordenarPorModelo(carra[] carros) {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
