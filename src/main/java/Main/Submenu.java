@@ -37,7 +37,7 @@ public class Submenu {
 
         
         frame = new JFrame(titulo);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       
         frame.setLocationRelativeTo(null);
         frame.setSize(400, 50 * numop);
         frame.setLayout(new BorderLayout());

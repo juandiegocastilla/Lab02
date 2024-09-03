@@ -26,7 +26,7 @@ public class Intersection {
             
 
             
-            System.out.print("tamano\nbubble:  "+inserciontiempo+"  microsegundos\n" );
+            System.out.print("tamano arreglo " +largo+"\nbubble:  "+inserciontiempo+"  microsegundos\n" );
             
 }}
 }

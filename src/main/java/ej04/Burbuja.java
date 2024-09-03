@@ -26,6 +26,6 @@ public class Burbuja {
             
 
             
-            System.out.print("tamano\nbubble:  "+bubbletiempo+"  microsegundos\n" );
+            System.out.print("tamano arreglo " +largo+"\nbubble:  "+bubbletiempo+"  microsegundos\n" );
             
 }}}

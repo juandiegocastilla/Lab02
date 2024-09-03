@@ -26,7 +26,7 @@ public class Seleccion {
             
 
             
-            System.out.print("tamano\nbubble:  "+selecciontiempo+"  microsegundos\n" );
+            System.out.print("tamano arreglo " +largo+"\nbubble:  "+selecciontiempo+"  microsegundos\n" );
             
 }}
 }
