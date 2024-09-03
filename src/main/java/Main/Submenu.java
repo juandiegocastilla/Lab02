@@ -1,24 +1,37 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package Main;
 
-import ej01.Calculo;
-import ej02.Carro;
-import ej03.Caracteres;
+
 import ej04.Burbuja;
-import javax.swing.*;
-import java.awt.*;
+import ej04.Intersection;
+import ej04.Seleccion;
+import ej04.merge;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public class Menu {
+/**
+ *
+ * @author juand
+ */
+public class Submenu {
+   
     public static JFrame frame;
     public static JButton[] botones;
 
     public static void main(String[] args) {
       
-        String titulo = "Lab02: Algoritmos de ordenamiento";
+        String titulo = "Lab02: Metodo de ordenamiento";
 
        
-        String opciones[] = {"Programa 1 de calculo", "Programa 2 linea de caracteres","Metodos de ordenamiento","Empresa de carros"};
+        String opciones[] = {"Ordenamiento Merge", "Ordenamiento Interseccion","Ordenamiento Seleccion","Ordenamiento Burbuja"};
 
         final int numop = opciones.length;
 
@@ -46,17 +59,16 @@ public class Menu {
                   
                     switch (index) {
                         case 0:
-                            Calculo.main(new String[]{})
+                            merge.main(new String[]{})
                            ;  break;
                         case 1:
-                            Caracteres.main(new String[]{})
+                            Intersection.main(new String[]{})
                             ; break;
                         case 2:
-                           Submenu.main(new String[]{});break;
-                            
+                            Seleccion.main(new String[]{})
+                            ;break;
                         case 3: 
-                            botones[index].setEnabled(!botones[index].isEnabled());
-                            new Carro().setVisible(true); break;
+                            Burbuja.main(new String[]{});
                         
                     }
                     // *** FINAL AJUSTES ***
@@ -71,5 +83,9 @@ public class Menu {
 
         // Mostrar la ventana
         frame.setVisible(true);
+    }  
+
+    public void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
